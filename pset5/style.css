@@ -1,0 +1,20 @@
+body {
+  background-color: #fdf6e3;
+  color: #839496;
+  line-height: 1.6
+}
+
+small {
+  display: block;
+}
+
+dd {
+  margin-left: 1em;
+}
+.container {
+  margin-top: 2%;
+}
+
+#agarrarlapala {
+  text-decoration: line-through;
+}
