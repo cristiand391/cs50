@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h1>Sheet</h1>
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Name</th>
+      <th>Province</th>
+      <th>God</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for wachin in wachines %}
+    <tr>
+      <td>{{ wachin['name'] }}</td>
+      <td>{{ wachin['province'] }}</td>
+      <td>{{ wachin['god'] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+<h1 class="mb-3">Form</h1>
+
+<!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+<form action="/form" method="post">
+
+	<div class="form-group">
+		<input name="name" type="text" class="form-control" placeholder="Name">
+	</div>
+	<div class="form-group">
+		<select name="province" id="provinces" class="form-control">
+			<option value="0" selected disabled>Choose your province</option>
+			<option value="Buenos Aires">Buenos Aires</option>
+			<option value="Catamarca">Catamarca</option>
+			<option value="Chaco">Chaco</option>
+			<option value="Chubut">Chubut</option>
+			<option value="Córdoba">Córdoba</option>
+			<option value="Corrientes">Corrientes</option>
+			<option value="Entre Ríos">Entre Ríos</option>
+			<option value="Formosa">Formosa</option>
+			<option value="Jujuy">Jujuy</option>
+			<option value="La Pampa">La Pampa</option>
+			<option value="La Rioja">La Rioja</option>
+			<option value="Mendoza">Mendoza</option>
+			<option value="Misiones">Misiones</option>
+			<option value="Neuquén">Neuquén</option>
+			<option value="Río Negro">Río Negro</option>
+			<option value="Salta">Salta</option>
+			<option value="San Juan">San Juan</option>
+			<option value="San Luis">San Luis</option>
+			<option value="Santa Cruz">Santa Cruz</option>
+			<option value="Santa Fe">Santa Fe</option>
+			<option value="Santiago del Estero">Santiago del Estero</option>
+			<option value="Tierra del Fuego">Tierra del Fuego</option>
+			<option value="Tucumán">Tucumán</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<div class="form-check">
+			<input type="radio" name="god" class="form-check-input" id="pepo" value="El Pepo">
+			<label for="pepo" class="form-check-label">El Pepo</label>
+		</div>
+		<div class="form-check">
+			<input type="radio" name="god" class="form-check-input" id="dualipa" value="Dua Lipa">
+			<label for="dualipa" class="form-check-label">Dua Lipa</label>
+		</div>
+	</div>
+	<!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+	<button class="btn btn-primary" type="submit">Submit</button>
+
+</form>
+
+<script>
+
+	document.querySelector('form').onsubmit = function () {
+		if (!document.getElementsByName('name')[0].value) {
+			alert('You must provide a name!');
+			return false
+		}
+		else if (document.getElementsByName('province')[0].value == 0) {
+			alert('You must provide your province, you boludo!');
+			return false
+		}
+		else if (!document.getElementsByName('god')[0].checked && !document.getElementsByName('god')[1].checked) {
+			alert("You must choose a god!")
+			return false
+		}
+	}
+
+</script>
+
+{% endblock %}
