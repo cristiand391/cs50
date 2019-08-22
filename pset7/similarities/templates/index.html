@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="col">
+    <form action="/compare" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <input class="form-control-file" type="file" name="file1">
+        </div>
+        <div class="form-group">
+            <input class="form-control-file" type="file" name="file2">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="algorithm" value="lines">
+                </label>
+                Lines
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="algorithm" value="sentences">
+                </label>
+                Sentences
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="algorithm" value="substrings">
+                </label>
+                Substrings
+                <input type="number" name="length">
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Compare</button>
+    </form>
+</div>
+
+{% endblock %}
