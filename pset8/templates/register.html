@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+
+{% block main %}
+    <form action="/register" method="post" id="form">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirmation" type="password">
+        </div>
+        <button id="button" class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script>
+        document.getElementById('button').addEventListener("click", function(event){
+            event.preventDefault();
+
+            $.get('/check?username=' + document.getElementsByName('username')[0].value , function(data) {
+                if (data)
+                    document.getElementById('form').submit();
+                else
+                    alert("invalid username or username already taken");
+                });
+        });
+    </script>
+{% endblock %}
