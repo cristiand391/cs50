@@ -4,7 +4,7 @@ Problems I solved during [CS50's Introduction to Computer Science](https://www.e
 
 ## Docs
 
-  - [Problem Set 0 - Scrath](https://docs.cs50.net/2019/x/psets/0/scratch.html)
+  - [Problem Set 0 - Scratch](https://docs.cs50.net/2019/x/psets/0/scratch.html)
   - [Problem Set 1 - Hello, Mario (less) and Cash](https://docs.cs50.net/2019/x/psets/1/)
   - [Problem Set 2 - Caesar and Vigenère](https://docs.cs50.net/2019/x/psets/2/)
   - [Problem Set 3 - Whodunit, Resize (less) and Recover](https://docs.cs50.net/2019/x/psets/3/)
